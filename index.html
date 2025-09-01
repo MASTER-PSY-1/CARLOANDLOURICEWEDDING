@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<section class="page" id="page1">
+  <video autoplay muted loop playsinline preload="none" poster="pics/fallback.jpg" class="bg-video">
+    <source src="pics/picss1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="content"></div>
+</section>
+
+<section class="page" id="page2"><div class="content"></div></section>
+<section class="page" id="page3"><div class="content"></div></section>
+
+<section class="page" id="page4">
+  <div class="content"></div>
+  <a href="https://www.google.com/maps/place/Iglesia+Ni+Cristo+Lokal+ng+Sta.+Rosa..." target="_blank" class="corner-btn left-btn">Directions</a>
+  <a href="https://www.google.com/maps/place/Sherinai+Events+Place..." target="_blank" class="corner-btn right-btn">Directions</a>
+</section>
+
+<section class="page" id="page5"><div class="content"></div></section>
+<section class="page" id="page6"><div class="content"></div></section>
+
+<!-- Countdown Section -->
+<section class="page" id="page7">
+  <div class="countdown-container">
+    <h1>Countdown to the Big Day</h1>
+    <div id="countdown">
+      <span id="days">0</span> Days
+      <span id="hours">0</span> Hours
+      <span id="minutes">0</span> Minutes
+      <span id="seconds">0</span> Seconds
+    </div>
+  </div>
+</section>
+
+<!-- RSVP Section -->
+<section class="page" id="page8">
+  <div class="content">
+    <a class="rsvp-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfVEb2VIeVyAsXOUxcVxiglAWKby4wV0KTcC9MzWRIgCo0ojw/viewform?usp=dialog" target="_blank">CLICK HERE</a>
+  </div>
+</section>
+
+<section class="page" id="page9">
+  <video autoplay muted loop playsinline preload="none" poster="pics/fallback.jpg" class="bg-video">
+    <source src="pics/Pic9.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="content"></div>
+</section>
+
+<section class="page" id="page10"><div class="content"></div></section>
+<section class="page" id="page11"><div class="content"></div></section>
+<section class="page" id="page12"><div class="content"></div></section>
+<section class="page" id="page13"><div class="content"></div></section>
+
+<script>
+  // Countdown
+  const countDownDate = new Date("Nov 11, 2025 00:00:00").getTime();
+  const countdownFunction = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+
+    if (distance < 0) {
+      clearInterval(countdownFunction);
+      document.getElementById("countdown").innerText = "The day has arrived!";
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
